@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>PasswordGenerator</title>
+	</head>
+	<body>
+		<div class="main-containner">
+			<h1 class="title">Generate your password</h1>
+			<button id="generateButton" class="button">Go!</button>
+			<p id="passwordBLock"></p>
+			<script>
+				const button = document.getElementById('generateButton');
+				let password = "";
+				const passBlock = document.getElementById('passwordBLock')
+				button.addEventListener('click', function () {
+					fetch('http://localhost:8080/generatePassword')
+						.then(function (result) {
+							result.json().then( data => {
+									console.log("PASSWORD SUPER STRONG :",data.password);
+									passBlock.textContent = data.password;
+								}
+							);
+						})
+						.catch( function (error) {
+							console.log(error);			
+						});
+				});
+			</script>
+		</div>
+	</body>
