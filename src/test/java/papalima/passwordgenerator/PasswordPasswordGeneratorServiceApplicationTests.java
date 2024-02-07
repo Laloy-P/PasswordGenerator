@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import papalima.passwordgenerator.model.Interval;
-import papalima.passwordgenerator.model.IntervalRecord;
 import papalima.passwordgenerator.services.PasswordGeneratorService;
 
 import java.util.ArrayList;
