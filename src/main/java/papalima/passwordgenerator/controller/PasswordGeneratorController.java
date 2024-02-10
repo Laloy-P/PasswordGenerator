@@ -10,13 +10,7 @@ import papalima.passwordgenerator.services.PasswordGeneratorService;
 public class PasswordGeneratorController {
     PasswordGeneratorService generator = new PasswordGeneratorService();
 
-    @GetMapping(path = "/generatePassword", produces="application/json")
-    public PasswordRecord generateNewPassword() {
-        return generator.generatePassword();
-    }
-
-
-    @GetMapping(path = "/generatePassword2", produces = "application/json")
+    @GetMapping(path = "/generatePassword", produces = "application/json")
     public PasswordRecord generateNewPassword(
             @RequestParam(name = "passwordSize", required = false, defaultValue = "8") Integer passwordSize,
             @RequestParam(name = "specialChars", required = false, defaultValue = "true") Boolean specialChars,
